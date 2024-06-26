@@ -1,2 +1,3 @@
-# minecraftwindows11.github.io
-Nova's new repository, but because nova is doen't use html very well, so this repository's update will very~~~~ slow~~~~~~
+# 这是什么？
+
+这是Nova的一个仓库，非常非常简陋。毕竟只是用来展示一些东西而已。
