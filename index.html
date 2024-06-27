@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>主页 - Nova赛博图书馆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -79,42 +84,41 @@
 <body>
 
 <div class="header">
-  <h1>Nova赛博图书馆</h1>
-  <h2 class="subtitle">纵向阅读丝滑~~~</h2>
+    <h1>Nova赛博图书馆</h1>
+    <h2 class="subtitle">纵向阅读丝滑~~~</h2>
 </div>
 
 <ul class="topnav">
-  <li><a href="#">主页</a></li>
-  <li><a href="#">小说</a></li>
-  <li><a href="#">协议</a></li>
-  <li><a href="#">关于</a></li>
+    <li><a href="#">主页</a></li>
+    <li><a href="#">小说</a></li>
+    <li><a href="#">协议</a></li>
+    <li><a href="#">关于</a></li>
 </ul>
 
+<button class="btn btn-primary" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-content">
-    <a href="#" class="sidebar-close" onclick="closeSidebar()">&times;</a>
-    <a href="#">主页</a>
-    <a href="#">我的聊天室！</a>
-  </div>
+    <div class="sidebar-content">
+        <a href="#">侧边栏选项1</a>
+        <a href="#">侧边栏选项2</a>
+        <a href="#">侧边栏选项3</a>
+        <a href="#">侧边栏选项4</a>
+    </div>
 </div>
 
 <script>
-function openSidebar() {
-  document.getElementById("sidebar").style.width = "250px";
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    }
+
+    window.onclick = function(event) {
+        var sidebar = document.getElementById("sidebar");
+        var sidebarBtn = document.querySelector(".btn.btn-primary");
+        if (event.target !== sidebar && event.target !== sidebarBtn && !sidebar.contains(event.target)) {
+        sidebar.style.width = "0";
+    }
 }
-
-function closeSidebar() {
-  document.getElementById("sidebar").style.width = "0";
-}
-
-document.querySelector('.sidebar-content').addEventListener('mouseover', function() {
-  openSidebar();
-});
-
-document.querySelector('.sidebar').addEventListener('mouseleave', function() {
-  closeSidebar();
-});
 </script>
-
 </body>
 </html>
