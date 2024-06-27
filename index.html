@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页 - Nova赛博图书馆</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #f2f2f2;
+        text-align: center;
+        padding: 10px 0;
+      }
+      .subtitle {
+        font-size: 18px;
+      }
+      .topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      .topnav li {
+        float: left;
+      }
+      .topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .topnav li a:hover {
+        background-color: white;
+        color: #333;
+      }
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+      .sidebar-content {
+        text-align: center;
+        padding: 10px;
+      }
+      .sidebar a {
+        padding: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+      .sidebar-close {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Nova赛博图书馆</h1>
+  <h2 class="subtitle">纵向阅读丝滑~~~</h2>
+</div>
+
+<ul class="topnav">
+  <li><a href="#">主页</a></li>
+  <li><a href="#">小说</a></li>
+  <li><a href="#">协议</a></li>
+  <li><a href="#">关于</a></li>
+</ul>
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-content">
+    <a href="#" class="sidebar-close" onclick="closeSidebar()">&times;</a>
+    <a href="#">主页</a>
+    <a href="#">我的聊天室！</a>
+  </div>
+</div>
+
+<script>
+function openSidebar() {
+  document.getElementById("sidebar").style.width = "250px";
+}
+
+function closeSidebar() {
+  document.getElementById("sidebar").style.width = "0";
+}
+
+document.querySelector('.sidebar-content').addEventListener('mouseover', function() {
+  openSidebar();
+});
+
+document.querySelector('.sidebar').addEventListener('mouseleave', function() {
+  closeSidebar();
+});
+</script>
+
+</body>
+</html>
