@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>错误尝试 - Nova赛博图书馆</title>
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/style/main.css">
+</head>
+<body>
+
+<div class="header">
+    <button class="btn btn-primary" onclick="toggleSidebar()"><i class="fa fa-align-justify"></i></button>
+    <h1 style="text-align: center">Nova赛博图书馆</h1>
+    <h2 class="subtitle" style="text-align: center">纵享阅读丝滑~~~</h2>
+</div>
+
+<ul class="topnav">
+    <li><a href="https://minecraftwindows11.github.io">主页</a></li>
+    <li><a href="#">小说</a></li>
+    <li><a href="#">协议</a></li>
+    <li><a href="#">关于</a></li>
+</ul>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <a href="#"><i class="fa fa-home"></i>主页</a>
+        <a href="#"><i class="fa fa-info-circle"></i>关于</a>
+    </div>
+</div>
+
+<div class="main-content">
+    <hr style="border: none;height: 5px;background-color: #3c8dbc;margin: 40px 0;box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);border-radius: 10px;" />
+    <h2 style="text-align: center">错误尝试</h2>
+    <h3>第零章 终点与开始</h3>
+    
+</div>
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    }
+
+    window.onclick = function(event) {
+        var sidebar = document.getElementById("sidebar");
+        var sidebarBtn = document.querySelector(".btn.btn-primary");
+        if (event.target !== sidebar && event.target !== sidebarBtn && !sidebar.contains(event.target)) {
+        sidebar.style.width = "0";
+    }
+}
+</script>
+</body>
+</html>
