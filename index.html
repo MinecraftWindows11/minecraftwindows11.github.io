@@ -77,10 +77,43 @@
         cursor: pointer;
       }
     </style>
+</head>
+<body>
+
+<div class="header">
+    <button class="btn btn-primary" onclick="toggleSidebar()"><i class="fa fa-align-justify"></i></button>
+    <h1 style="text-align: center">Nova赛博图书馆</h1>
+    <h2 class="subtitle" style="text-align: center">纵享阅读丝滑~~~</h2>
+</div>
+
+<ul class="topnav">
+    <li><a href="#">主页</a></li>
+    <li><a href="#">小说</a></li>
+    <li><a href="#">协议</a></li>
+    <li><a href="#">关于</a></li>
+</ul>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+        <a href="#"><i class="fa fa-home"></i>主页</a>
+        <a href="#"><i class="fa fa-info-circle"></i>关于</a>
+    </div>
+</div>
+
 <script>
-    (function () {
-        var a_idx = 0;
-        document.body.onclick = function (event) {
+  var a_idx = 0;
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
+    }
+    window.onclick = function(event) {
+        var sidebar = document.getElementById("sidebar");
+        var sidebarBtn = document.querySelector(".btn.btn-primary");
+        if (event.target !== sidebar && event.target !== sidebarBtn && !sidebar.contains(event.target)) {
+        sidebar.style.width = "0";
+      }
+    }
+        document.body.addEventListener('click',function (event) {
             var a = new Array("Apple Jack", "Pinkie Pie", "Twilight Sparker", "Fluttershy", "Rarity", "Starlight Glimmer", "Rainbow Dash", "Big McIntosh", "Granny Smith", "Apple Bloom", "Sugar Belle", "Countess Coloratura", "Sunset Shimmer", "Spike", "Princess Luna", "Princess Cadance", "Princess Celestia", "Flurry Heart", "Shining Armor", "Nightmare Moon（", "Sunburst", "Scootaloo", "Sweetie Belle", "Spitfire", "Diamond Dazzle Tiara", "Photo Finish", "Sweetie Drops", "Octavia", "Discord"); // 就先写这么多吧
             var heart = document.createElement("b");
             heart.onselectstart = new Function('event.returnValue=false'); //防止拖
@@ -110,50 +143,11 @@
                     s += 0.002;
                 }
             }, 15)
-        }
+        });
         //随机颜色
         function randomColor() {
-            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
-                .random() * 255)) + ")";
+            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
         }
-    }());
-</script>
-</head>
-<body>
-
-<div class="header">
-    <button class="btn btn-primary" onclick="toggleSidebar()"><i class="fa fa-align-justify"></i></button>
-    <h1 style="text-align: center">Nova赛博图书馆</h1>
-    <h2 class="subtitle" style="text-align: center">纵享阅读丝滑~~~</h2>
-</div>
-
-<ul class="topnav">
-    <li><a href="#">主页</a></li>
-    <li><a href="#">小说</a></li>
-    <li><a href="#">协议</a></li>
-    <li><a href="#">关于</a></li>
-</ul>
-
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-content">
-        <a href="#"><i class="fa fa-home"></i>主页</a>
-        <a href="#"><i class="fa fa-info-circle"></i>关于</a>
-    </div>
-</div>
-
-<script>
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        sidebar.style.width = sidebar.style.width === '250px' ? '0' : '250px';
-    }
-
-    window.onclick = function(event) {
-        var sidebar = document.getElementById("sidebar");
-        var sidebarBtn = document.querySelector(".btn.btn-primary");
-        if (event.target !== sidebar && event.target !== sidebarBtn && !sidebar.contains(event.target)) {
-        sidebar.style.width = "0";
-    }
-}
 </script>
 </body>
 </html>
