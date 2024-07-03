@@ -80,7 +80,7 @@
 <script>
     (function () {
         var a_idx = 0;
-        window.onclick = function (event) {
+        document.body.onclick = function (event) {
             var a = new Array("Apple Jack", "Pinkie Pie", "Twilight Sparker", "Fluttershy", "Rarity", "Starlight Glimmer", "Rainbow Dash", "Big McIntosh", "Granny Smith", "Apple Bloom", "Sugar Belle", "Countess Coloratura", "Sunset Shimmer", "Spike", "Princess Luna", "Princess Cadance", "Princess Celestia", "Flurry Heart", "Shining Armor", "Nightmare Moon（", "Sunburst", "Scootaloo", "Sweetie Belle", "Spitfire", "Diamond Dazzle Tiara", "Photo Finish", "Sweetie Drops", "Octavia", "Discord"); // 就先写这么多吧
             var heart = document.createElement("b");
             heart.onselectstart = new Function('event.returnValue=false'); //防止拖
