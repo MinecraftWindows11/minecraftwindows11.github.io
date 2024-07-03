@@ -77,6 +77,47 @@
         cursor: pointer;
       }
     </style>
+<script>
+    (function () {
+        var a_idx = 0;
+        window.onclick = function (event) {
+            var a = new Array("Apple Jack", "Pinkie Pie", "Twilight Sparker", "Fluttershy", "Rarity", "Starlight Glimmer", "Rainbow Dash", "Big McIntosh", "Granny Smith", "Apple Bloom", "Sugar Belle", "Countess Coloratura", "Sunset Shimmer", "Spike", "Princess Luna", "Princess Cadance", "Princess Celestia", "Flurry Heart", "Shining Armor", "Nightmare Moon（", "Sunburst", "Scootaloo", "Sweetie Belle", "Spitfire", "Diamond Dazzle Tiara", "Photo Finish", "Sweetie Drops", "Octavia", "Discord"); // 就先写这么多吧
+            var heart = document.createElement("b");
+            heart.onselectstart = new Function('event.returnValue=false'); //防止拖
+
+            document.body.appendChild(heart).innerHTML = a[a_idx]; //将b元素添加
+            a_idx = (a_idx + 1) % a.length;
+            heart.style.cssText = "position: fixed;left:-100%;"; //给p加样式
+
+            var f = 13, // 大小
+                x = event.clientX - f / 2 - 30, // x
+                y = event.clientY - f, // y
+                c = randomColor(), // random color
+                a = 1, // 透不透明
+                s = 0.8; // 大一点或者小一点
+
+            var timer = setInterval(function () { //定时
+                if (a <= 0) {
+                    document.body.removeChild(heart);
+                    clearInterval(timer);
+                } else {
+                    heart.style.cssText = "font-size:16px;cursor: default;position: fixed;color:" +
+                        c + ";left:" + x + "px;top:" + y + "px;opacity:" + a + ";transform:scale(" +
+                        s + ");";
+
+                    y--;
+                    a -= 0.016;
+                    s += 0.002;
+                }
+            }, 15)
+        }
+        //随机颜色
+        function randomColor() {
+            return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math
+                .random() * 255)) + ")";
+        }
+    }());
+</script>
 </head>
 <body>
 
