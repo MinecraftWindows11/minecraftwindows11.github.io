@@ -1,3 +1,5 @@
-# 这是什么？
+# What's that?
 
-这是Nova的一个仓库，非常非常简陋。甚至改不好一个BUG（
+This is an common repository on GitHub, it is usually test some thing such as JavaScript. I think you will think it's stupid (include this README.md). But I'm new on GitHub.
+
+I am trying to make it work but i cant.
