@@ -101,50 +101,6 @@
     </div>
 </div>
 
-    <includeonly>
-<style>
-.snow-container-xyz {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index:9999;
-}
-.snow-particle-xyz {
-    position:absolute;
-    color:#fff;
-    font-size:1em;
-    animation:snow-anim-xyz linear infinite;
-    text-shadow:0 0 8px rgba(255,255,255,0.8);
-}
-@keyframes snow-anim-xyz {
-    0%{transform:translateY(-100vh) translateX(-10vw) rotate(0);opacity:0.9}
-    100%{transform:translateY(100vh) translateX(40vw) rotate(720deg);opacity:0.2}
-}
-</style>
-
-<script>
-(()=>{
-    const c=document.createElement('div');
-    c.className='snow-container-xyz';
-    document.body.append(c);
-    
-    for(let i=0;i<45;i++){
-        const f=document.createElement('div');
-        f.className='snow-particle-xyz';
-        f.innerHTML=['❄','❅','❆','*'][Math.floor(Math.random()*4)];
-        f.style.left=Math.random()*100+'%';
-        f.style.animationDuration=Math.random()*7+6+'s';
-        f.style.animationDelay=Math.random()*8+'s';
-        f.style.fontSize=Math.random()*0.8+0.6+'em';
-        f.style.opacity=Math.random()*0.4+0.4;
-        c.append(f);
-    }
-})();
-</script>
-</includeonly>
 <script>
   var a_idx = 0;
     function toggleSidebar() {
